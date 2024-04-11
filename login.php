@@ -56,7 +56,7 @@ $hashedActualPassword = password_hash($actualPassword, PASSWORD_DEFAULT);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Newspaper</title>
-    <link rel="stylesheet" href="lstyle.css">
+    <link rel="stylesheet" href="login.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>

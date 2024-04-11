@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Newspaper - Article</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Article</title>
+    <link rel="stylesheet" type="text/css" href="article.css">
 </head>
 <body>
     <header>
-        <h1>Newspaper - Article</h1>
+        <h1>Article</h1>
     </header>
-    <nav>
-        <!-- Add navigation links if needed -->
-    </nav>
+    <!-- <nav class="navbar">
+        <a href="login.php">Login</a> 
+        <a href="register.php">Register</a>
+    </nav> -->
     <main>
-        <article>
+        <section>
+            <!-- <h2>Article Details</h2> -->
             <?php
             include 'includes/db_connection.php';
-            
-            // Check if article ID is set
-            if(isset($_GET['id'])) {
-                $article_id = $_GET['id'];
-                
-                // Fetch article from database
-                $sql = "SELECT * FROM articles WHERE article_id = $article_id";
-                $result = $conn->query($sql);
-                
-                if ($result->num_rows > 0) {
-                    // Output article details
-                    $row = $result->fetch_assoc();
-                    echo "<h2>" . $row["title"] . "</h2>";
+
+            // Retrieve article details based on the ID passed through the URL
+            $article_id = $_GET['id'];
+            $sql = "SELECT * FROM articles WHERE article_id = $article_id";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<article>";
+                    echo "<h3>" . $row["title"] . "</h3>";
+                    echo "<p><strong>Publication Date:</strong> " . $row["publication_date"] . "</p>";
+                    echo "<img src='" . $row["photo_url"] . "' alt='" . $row["title"] . "' />";
                     echo "<p>" . $row["content"] . "</p>";
-                    echo "<p>Published on: " . $row["publication_date"] . "</p>";
-                    // Display other article information as needed
-                } else {
-                    echo "Article not found";
+                    echo "</article>";
                 }
             } else {
-                echo "Article ID not provided";
+                echo "Article not found";
             }
-            // Close database connection
-            $conn->close();
             ?>
-        </article>
+
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Newspaper Website</p>
