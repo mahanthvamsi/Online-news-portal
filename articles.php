@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Newspaper - Latest Articles</title>
     <link rel="stylesheet" type="text/css" href="articles.css">
 </head>
@@ -12,7 +13,7 @@
     
     <main>
         <section>
-            <h2>Latest Articles</h2>
+        
             <main>
                 <section class="articles">
                         <?php

@@ -62,11 +62,13 @@ article {
     padding: 20px;
     margin-bottom: 20px;
     overflow: hidden;
+    border-radius: 5%;
 }
 
 article img {
     max-width: 100%;
     height: auto;
+    border-radius: 5%;
 }
 
 article h3 a{
@@ -96,15 +98,15 @@ footer {
     }
 
     article {
-        flex-basis: calc(50% - 20px); /* Two articles in a row with margin between */
-        margin-bottom: 20px; /* Add bottom margin for spacing */
+        flex-basis: calc(50% - 20px); 
+        margin-bottom: 20px;
     }
 
     .article-content {
-        padding: 20px; /* Add padding to the article content */
-        border: 1px solid #ccc; /* Add border to separate articles */
-        border-radius: 5px; /* Add border radius for styling */
-        background-color: #fff; /* Set background color for article content */
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
     }
 
     .article-content img {
@@ -114,5 +116,16 @@ footer {
 
     .article-content p {
         margin-top: 10px;
+    }
+}
+@media (max-width: 500px){
+    header h1{
+        font-size: 2rem;
+    }
+    .navbar a{
+        font-size: 1rem;
+    }
+    article h3 a{
+        font-size: 1.5rem;
     }
 }

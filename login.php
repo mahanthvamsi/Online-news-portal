@@ -74,7 +74,7 @@ $hashedActualPassword = password_hash($actualPassword, PASSWORD_DEFAULT);
                 <div class="form-group">
                     <label for="password">Password:</label><br>
                     <input type="password" id="password" name="password" required>
-                    <input type="checkbox" onclick="togglePasswordVisibility('password')">Show Password
+                    <input type="checkbox" onclick="togglePasswordVisibility('password')"> Show Password
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Login">
