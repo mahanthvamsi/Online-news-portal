@@ -13,7 +13,10 @@
             <a href="register.php">Register</a>
         </nav>
     </header>
-    
+    <div class="splash">
+        <!-- <img src="image31.png" class="fade-in"> -->
+        <h1 class="fade-in">NEWSPAPER!!</h1>
+    </div>
     <main>
         <section class="articles">
             <?php
@@ -42,5 +45,19 @@
     <footer>
         <p>&copy; 2024 Newspaper Website</p>
     </footer>
+    <script>
+    const splash = document.querySelector('.splash');
+        document.addEventListener('DOMContentLoaded', (e)=>{
+            setTimeout(()=>{
+                splash.classList.add('display-none');
+            },2000);
+        })
+        let imgContainer = document.querySelector(".img-container");
+        setInterval(() => {
+        let last = imgContainer.firstElementChild;
+        last.remove();
+        imgContainer.appendChild(last);
+        }, 2500);
+    </script>
 </body>
 </html>
